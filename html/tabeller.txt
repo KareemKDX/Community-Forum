@@ -1,0 +1,20 @@
+Sidor:
+1. createUser.php
+2. createGroup.php
+
+1. createGroup.php
+2. showGroup.php
+3. showGroups.php
+4. applyGroupMembership.php
+
+1. createDiscussion.php
+2. showDiscussion.php
+3. createPost.php
+
+1. login.php
+2. logout.php
+
+//Admin
+1. approveMembership.php
+2. createInviteLink.php
+
