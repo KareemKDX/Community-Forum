@@ -1,3 +1,13 @@
+
+  <?php 
+  require("functions.php");
+
+  $result = $db->query("SELECT * FROM users");
+  var_dump($result);
+  ?>
+
+
+
 <html>
 
 <head>
