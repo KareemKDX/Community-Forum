@@ -1,8 +1,10 @@
 <?php
-$db = new mysqli("db", "uppgift2user", "password", "uppgift2");
+require 'settings.php';
 
-if($db->connect_errno) {
-    echo "failed to connect to MySQL: " . $db->connect_error;
+try {
+    $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASSWORD);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error connecting to database: " . $e->getMessage());
 }
-
 ?>
