@@ -3,12 +3,14 @@ session_start();
 require("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    
+    //SAVE VALUES FROM FORM TO VARIABLES
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+    // INSERT USER TO DATABASE
     $sql = "INSERT INTO users (first_name, last_name, email, password_hash) VALUES (?, ?, ?, ?)";
 
     $stmt = $db->prepare($sql);
@@ -40,27 +42,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  <div class="form-page-container">
 
- <div class= "form-content">
+ <div class= "form-card">
+
+ 
   <div class = "form-header">
-    <h1>Create Account</h1>
+    <h2>Registration </h2>
 </div>
+
+
   <form method="POST" action="" class="form-container">
    
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" required>
+      <div class="form-group"> 
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name" required>
+      </div>
 
-    <label for="last_name">Last name:</label>
-    <input type="text" id="last_name" name="last_name" required>
+      <div class="form-group"> 
+      <label for="last_name">Last name:</label>
+      <input type="text" id="last_name" name="last_name" required>
+      </div>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+      <div class="form-group"> 
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
-
+      <div class="form-group"> 
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      </div>
     <button class = "button-primary" type="submit" value="Create Account">Create Account</button>
 
   </form>
+
+ <p>Already a member? <a href="create-account.php">Sign in here</a></p>
+   </div>
   </div>
 </div>
 

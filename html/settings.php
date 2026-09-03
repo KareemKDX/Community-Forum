@@ -1,4 +1,3 @@
-
 <?php
 define('DB_HOST', 'db');
 define('DB_NAME', 'uppgift2');
