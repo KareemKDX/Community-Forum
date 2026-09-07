@@ -2,7 +2,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: white;
+  background-color: #f1f3f5;
 }
 
 :root {
@@ -15,6 +15,9 @@ body {
   --color-success: #16a34a;
   --color-error: #dc2626;
 
+  --border-color: #ef8354;
+  --radius: 8px;
+
   --button-primary: #4f5d75;
   --button-primary-hover: #2d3142;
 
@@ -26,8 +29,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-
-  border: 1px solid;
+  margin-top: 50px;
 }
 
 .form-page-container {
@@ -58,16 +60,8 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
 .box {
-  background: var(--surface);
-  border: 0.5px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -102,6 +96,16 @@ input {
 a {
   text-decoration: none;
   color: var(--button-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 button {

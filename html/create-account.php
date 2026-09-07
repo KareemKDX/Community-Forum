@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // INSERT USER TO DATABASE
-    $sql = "INSERT INTO users (first_name, last_name, email, password_hash) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO users (first_name, last_name, email, password_hash) 
+            VALUES (?, ?, ?, ?)";
 
     $stmt = $db->prepare($sql);
     $stmt->execute([$first_name, $last_name, $email, $password_hash]);
