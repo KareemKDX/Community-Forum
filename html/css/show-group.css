@@ -1,0 +1,87 @@
+.discussion-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 1rem;
+}
+
+.discussion-card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  padding: 1rem;
+}
+
+.discussion-post-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.discussion-header {
+  display: flex;
+  align-items: center;
+}
+
+.discussion-header-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.group-header-text p,
+.group-header-text h4 {
+  margin: 0;
+}
+.discussion-header-text p {
+  font-size: 12px;
+}
+.discussion-header-text h4 {
+  font-size: 14px;
+}
+
+.discussion-items {
+  width: fit-content;
+
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.discussion-content {
+  margin-top: 2rem;
+}
+
+.reply-container {
+  width: 100%;
+  margin-top: 30px;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: var(--color-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.reply-container textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  resize: vertical;
+}

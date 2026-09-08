@@ -1,6 +1,5 @@
 .dashboard-box {
   display: flex;
-  background-color: var(--color-primary-dark);
   border: 1px solid var(--border-color);
   min-height: 800px;
 }
@@ -45,30 +44,64 @@
 
 .dashboard-box-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 5px;
-  justify-content: center;
+  align-items: center;
   color: white;
   background-color: var(--color-secondary);
   min-height: 50px;
+}
+
+.dashboard-box-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius);
+  height: 40px;
+  width: 40px;
 }
 
 .dashboard-box-link a {
   text-decoration: none;
   color: var(--color-text-dark);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 500px;
 }
 
 .group-card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
   border-radius: var(--radius);
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.group-card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-card-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.group-card-status p,
+.group-card-status a {
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 
 .group-card-text {
@@ -86,5 +119,13 @@
 
 .group-container p,
 .group-container h3 {
-  color: var(--color-text);
+  color: var(--color-text-dark);
+}
+
+.waiting-approval {
+  color: var(-color-waiting) !important;
+}
+
+.apply {
+  color: var(--color-success);
 }

@@ -99,9 +99,11 @@ if (isset($_SESSION['user_id'])) : ?>
 
  <div class = "box dashboard-box">
    <div class = "dashboard-box-header">
+      <div class = "dashboard-box-header-text">
       <h2>Groups</h2>
+      </div>
          <div class = "dashboard-box-link">
-            <a href="create-group.php">+ Create new group</a>
+            <a href="create-group.php">+ </a>
       </div>
     </div>
    
@@ -141,9 +143,7 @@ if (isset($_SESSION['user_id'])) : ?>
  <div class = "box dashboard-box">
    <div class = "dashboard-box-header">
       <h2>Other groups</h2>
-         <div class = "dashboard-box-link">
-            <a href="create-group.php">+ Create new group</a>
-      </div>
+        
     </div>
    
             <?php if (empty($other_groups)) : ?>
@@ -162,15 +162,15 @@ if (isset($_SESSION['user_id'])) : ?>
                     <h3><?= htmlspecialchars($group['name']) ?></h3>
                     <p><?= htmlspecialchars($group['description']) ?></p>
         </div>
-               <div>
+               <div class = "group-card-status">
              <?php if (in_array($group['id'], $pending_group_ids)) : ?>
 
-    <span>Waiting Approval</span>
+    <p class = "waiting-approval">Waiting Approval</p>
 
     
 <?php else : ?>
 
-    <a href="apply-group.php?id=<?= $group['id'] ?>">
+    <a class = "apply" href="apply-group.php?id=<?= $group['id'] ?>">
         Apply
     </a>
 
@@ -193,9 +193,7 @@ if (isset($_SESSION['user_id'])) : ?>
   <div class = "box dashboard-box">
    <div class = "dashboard-box-header">
       <h2>Applications requests</h2>
-         <div class = "dashboard-box-link">
-            <a href="create-group.php">+ Create new group</a>
-      </div>
+     
     </div>
    
             <?php if (empty($applications)) : ?>

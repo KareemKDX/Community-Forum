@@ -5,11 +5,10 @@
 
 
 <div class="navbar-links"> 
-    <a href="index.php">Hem</a>
-    <a href="groups.php">Grupper</a>
-    <a href="login.php">Logga in</a>
+    <a href="index.php">Home</a>
+    <a href="login.php">Login</a>
     <a href="create-account.php">Create Account</a>
-    <a href="create-group.php">Create group</a>
+
 </nav>
 </div>
 ';
