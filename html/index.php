@@ -80,6 +80,7 @@
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/globals.css">
   <link rel="stylesheet" href="./css/homepage.css">
+   <link rel="stylesheet" href="./css/show-group.css">
   <?php 
    $page_name = "Homepage"; 
    echo "<title>$page_name</title>"; ?>
@@ -103,8 +104,8 @@ if (isset($_SESSION['user_id'])) : ?>
     
       <div class = "dashboard-user">
        
-         <p>Logged in: <?php echo htmlspecialchars($_SESSION['first_name']) ?></p>
-        <a href="logout.php">Log out</a>
+         <p>User: <?php echo htmlspecialchars($_SESSION['first_name']) ?></p>
+      
         </div>
 
         </div>
@@ -273,8 +274,12 @@ if (isset($_SESSION['user_id'])) : ?>
 
 
 <?php else: ?> 
-     <p>You are not logged in.</p>
-     <a href="login.php">Log in</a> | <a href="register.php">Create account</a>;
+
+  <div class = "not-logged-in-header">
+     <h2>You are not logged in.</h2>
+     <p>Login or create an account to start your journey.</p>
+     <a href="login.php">Log in</a> | <a href="create-account.php">Create account</a>
+     </div>
      <?php endif; ?>
 
 

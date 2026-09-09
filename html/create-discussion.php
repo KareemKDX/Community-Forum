@@ -58,27 +58,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/globals.css">
+   <link rel="stylesheet" href="./css/show-group.css">
   <title>Starta diskussion</title>
 </head>
 <body>
 
 <?php require 'menu.php'; ?>
 
-<h1>Starta diskussion i <?= htmlspecialchars($group['name']) ?></h1>
+<div class = "page-container">
+    <div class = "forum-container">
+<div class = "forum-wrapper">
+    <div class = "forum-header">
+        <a href="index.php" class="button-back">
+        <-
+    </a>
+    </div>
+
+<h2>Create new discussion in <?= htmlspecialchars($group['name']) ?></h2>
 
 <?php if ($error) { ?>
     <p class="error"><?= htmlspecialchars($error) ?></p>
 <?php } ?>
 
-<form method="POST" action="">
-    <label for="title">Ämne:</label>
-    <input type="text" id="title" name="title" required>
+ <div class="reply-container center">
+   <form class = "form-container" method="POST" action="">
+    <label for="title">Discussion name:</label>
+    <input type="text" id="title" placeholder = "Enter a name for the discussion" name="title" required>
 
-    <label for="description">Beskrivning:</label>
-    <textarea id="description" name="description" required></textarea>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder = "Enter a description for the discussion" required></textarea>
 
-    <input type="submit" value="Starta diskussion">
+    <button class = "button-primary" type="submit" value="Starta diskussion">Create discussion</button>
 </form>
+</div>
+
+</div>
+</div>
+
+</div>
+
 
 </body>
 </html>

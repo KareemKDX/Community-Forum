@@ -88,7 +88,9 @@ if ($is_member) {
          </div>
 
     <?php if (count($discussions) === 0) { ?>
+    <div class = "empty-message">
         <p>No discussions added to this group yet.</p>
+        </div>
     <?php } else { ?>
 
       

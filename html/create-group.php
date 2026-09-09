@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/globals.css">
   <link rel="stylesheet" href="./css/homepage.css">
+   <link rel="stylesheet" href="./css/show-group.css">
   <title>Create group</title>
 </head>
 <body>
@@ -66,9 +67,7 @@ if (isset($_SESSION['user_id'])) : ?>
        </div>
     
       <div class = "dashboard-user">
-       
-         <p>Logged in: <?php echo htmlspecialchars($_SESSION['first_name']) ?></p>
-        <a href="logout.php">Log out</a>
+         <p>User: <?php echo htmlspecialchars($_SESSION['first_name']) ?></p>
         </div>
 
         </div>
@@ -83,6 +82,8 @@ if (isset($_SESSION['user_id'])) : ?>
     </a>
     </div>
 
+
+     <div class="reply-container">
 <div class = "form-card style-create">
 <form method="POST" action="" class = "form-container">
     <label for="name">Group name:</label>
@@ -93,6 +94,7 @@ if (isset($_SESSION['user_id'])) : ?>
 
     <button type="submit" class = "button-primary" value="Skapa grupp">Create</button>
 </form>
+</div>
 </div>
 </div>
 
