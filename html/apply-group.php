@@ -1,5 +1,10 @@
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: index.php');
+    exit;
+}
+
 session_start();
 require("functions.php");
 
@@ -9,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$group_id = $_GET['id'];
+$group_id = $_POST['id'];
 
 $sql = "INSERT INTO applications (status, user_id, group_id)
         VALUES ('pending', ?, ?)";

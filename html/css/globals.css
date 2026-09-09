@@ -85,10 +85,17 @@ body {
   flex-direction: column;
   width: 400px;
   align-items: center;
-  background-color: #e5ebea;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.style-login {
+  background-color: #e5ebea;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.style-create {
+  margin-top: 10px;
 }
 
 .box {
@@ -161,6 +168,22 @@ button {
   background-color: var(--button-primary-hover);
 }
 
+.button-accept {
+  background-color: var(--color-success);
+  color: var(--color-text);
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button-reject {
+  background-color: var(--color-error);
+  color: var(--color-text);
+  padding: 10px 20px;
+  margin-top: 10px;
+  width: 100%;
+}
+
 .error-text {
   color: var(--color-error);
   font-size: 14px;
@@ -168,11 +191,9 @@ button {
 
 .button-back {
   display: inline-block;
-
   width: fit-content;
   padding: auto;
   color: var(--color-secondary);
-
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 500;

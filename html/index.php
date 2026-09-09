@@ -2,7 +2,7 @@
   session_start();
   require("functions.php");
 
-   //IF NOT LOGGED IN: SET EMPTY ARRAY
+   //IF NOT LOGGED IN (SAVED IN SESSION): SET ARRAYS EMPTY 
    //IF LOGGED IN: CONTINUE -> FETCH GROUPS AND SAVE TO ARRAYS
    if (!isset($_SESSION['user_id'])) {
       $my_groups = [];
@@ -52,6 +52,22 @@
          foreach ($pending_rows as $row) {
             $pending_group_ids[] = $row['group_id'];
          }
+
+      // FETCH APPLICATIONS WHERE USER ADMIN
+          $sql = "SELECT a.id, a.status, a.created_at,
+          g.id AS group_id, g.name AS group_name,
+          u.first_name, u.last_name
+          FROM applications a
+          JOIN forum_groups g ON g.id = a.group_id
+          JOIN group_members gm ON gm.group_id = g.id
+          JOIN users u ON u.id = a.user_id
+          WHERE gm.user_id = ?
+          AND gm.role = 'admin'
+          AND a.status = 'pending'";
+
+          $stmt = $db->prepare($sql);
+          $stmt->execute([$user_id]);
+          $applications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         
    }
@@ -145,14 +161,14 @@ if (isset($_SESSION['user_id'])) : ?>
       <h2>Other groups</h2>
         
     </div>
-   
+   <div class = "group-container">
             <?php if (empty($other_groups)) : ?>
 
-            <p>You are not a member of any groups yet.</p>
+            <p>There are no other groups available.</p>
 
         <?php else : ?>
 
-          <div class = "group-container">
+          
             
           <?php foreach ($other_groups as $group) : ?>
              <div class = "group-card">
@@ -169,10 +185,10 @@ if (isset($_SESSION['user_id'])) : ?>
 
     
 <?php else : ?>
-
-    <a class = "apply" href="apply-group.php?id=<?= $group['id'] ?>">
-        Apply
-    </a>
+<form method="POST" action="apply-group.php" style="display:inline;">
+    <input type="hidden" name="id" value="<?= $group['id'] ?>">
+    <button class="button-accept" type="submit">Apply</button>
+</form>
 
 <?php endif; ?>
         </div>
@@ -202,21 +218,43 @@ if (isset($_SESSION['user_id'])) : ?>
 
         <?php else : ?>
 
-          <div class = "group-container">
-            
-          <?php foreach ($applications as $application) : ?>
-             <div class = "group-card">
+         
+    
+    <div class="group-container">
+
+    <?php foreach ($applications as $application) : ?>
+        <div class="group-card">
+
+            <div class="group-card-header">
+                <h3><?= htmlspecialchars($application['group_name']) ?></h3>
+                <p>
+                  From:
+                    <?= htmlspecialchars($application['first_name'] . ' ' . $application['last_name']) ?>
+                   
+                </p>
+            </div>
+
+            <div class="group-card-status-form">
               
-             <div class = "group-card-header">
-                <a href="show-application.php?id=<?= $group['id'] ?>">
-                    <h3><?= htmlspecialchars($group['name']) ?></h3>
-                    <p><?= htmlspecialchars($application['status']) ?></p>
-                </a>
+            <div>
+                <form class = "form-status-container" method="POST" action="handle-application.php" style="display:inline;">
+                    <input type="hidden" name="application_id" value="<?= $application['id'] ?>">
+                    <input type="hidden" name="action" value="approve">
+                    <button class = "button-accept" type="submit" value="Approve">Approve</button>
+                </form>
+                </div>
+              
+              <div>
+                <form class = "form-status-container" method="POST" action="handle-application.php" style="display:inline;">
+                    <input type="hidden" name="application_id" value="<?= $application['id'] ?>">
+                    <input type="hidden" name="action" value="reject">
+                    <button class = "button-reject" type="submit" value="Reject">Reject</button>
+                </form>
                 </div>
 
-                <div>Apply</div>
-                
-                </div>
+            </div>
+
+        </div>
 
             <?php endforeach; ?>
             

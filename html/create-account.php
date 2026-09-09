@@ -8,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
+
+    //HASH THE PASSWORD
     $password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // INSERT USER TO DATABASE
@@ -22,10 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
-
-
-
-
 
 <html>
 
@@ -43,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
  <div class="form-page-container">
 
- <div class= "form-card">
+ <div class= "form-card style-login">
 
  
   <div class = "form-header">

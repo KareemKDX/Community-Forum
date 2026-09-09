@@ -97,6 +97,18 @@
   box-sizing: border-box;
 }
 
+.group-card-status-form {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  border-left: 1px solid;
+  min-width: 80px;
+  height: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
 .group-card-status p,
 .group-card-status a {
   width: 100%;
@@ -128,4 +140,14 @@
 
 .apply {
   color: var(--color-success);
+}
+
+.form-status-container {
+  display: flex;
+  flex-direction: column;
+}
+.form-status-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

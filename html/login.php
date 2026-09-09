@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="form-page-container">
 
 
-<div class = "form-card">
+<div class = "form-card style-login">
 
   <div class = "form-header">
     <h2>Login </h2>
