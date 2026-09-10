@@ -91,11 +91,12 @@
 
 <div class= "page-container">
 
-<div class="dashboard-header">
+
 
 
 <?php
 if (isset($_SESSION['user_id'])) : ?>
+<div class="dashboard-header">
        
     <div class = "dashboard-welcome">
         <h3>DASHBOARD</h3>
@@ -215,7 +216,7 @@ if (isset($_SESSION['user_id'])) : ?>
    
             <?php if (empty($applications)) : ?>
 
-            <p>You are not a member of any groups yet.</p>
+            <p>You currently have no applications pending.</p>
 
         <?php else : ?>
 
@@ -267,7 +268,7 @@ if (isset($_SESSION['user_id'])) : ?>
       </div>
  </div>
 
-    
+    </div>
     
 
 
@@ -275,18 +276,46 @@ if (isset($_SESSION['user_id'])) : ?>
 
 <?php else: ?> 
 
-  <div class = "not-logged-in-header">
-     <h2>You are not logged in.</h2>
-     <p>Login or create an account to start your journey.</p>
-     <a href="login.php">Log in</a> | <a href="create-account.php">Create account</a>
-     </div>
+    <div class = "not-logged-in-container">
+
+      <div class="hero-not-logged-in">
+        <h1>Community Forum</h1>
+        <p>
+           Join groups, discuss, and talk to people around the world in topics that you are interested in.
+        </p>
+        Login or create an account to start your journey.
+        <div class="hero-buttons">
+            <a href="create-account.php" class="button-primary">Skapa konto</a>
+            <a href="login.php" class="button-secondary">Login</a>
+        </div>
+    </div>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Create groups</h3>
+            <p>Create your own groups in topics you find interesting.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Discuss</h3>
+            <p>Join groups & discussions.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Take control</h3>
+            <p>Administrate and make your own groups suiting, the exact way you intended it to be.</p>
+        </div>
+    </div>
+
+  
+
+   
+
      <?php endif; ?>
 
 
 
 
 
-</div>
-</div>
+
+
 </body>
 </html>

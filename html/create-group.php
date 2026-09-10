@@ -83,7 +83,7 @@ if (isset($_SESSION['user_id'])) : ?>
     </div>
 
 
-     <div class="reply-container">
+     <div class="reply-container center">
 <div class = "form-card style-create">
 <form method="POST" action="" class = "form-container">
     <label for="name">Group name:</label>

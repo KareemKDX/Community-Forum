@@ -100,20 +100,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid;
+  border-left: 2px solid;
   width: 80px;
+
   min-width: 80px;
-  height: 80px;
   padding: 5px;
-  box-sizing: border-box;
 }
 
 .group-card-status-form {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-  border-left: 1px solid;
+  border-left: 2px solid;
   min-width: 80px;
   height: 80px;
   padding: 5px;
@@ -165,4 +163,75 @@
 .not-logged-in-header a,
 .not-logged-in-header p {
   color: white;
+}
+
+.not-logged-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  background-color: var(--color-primary-dark);
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.hero-not-logged-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.button-secondary:hover {
+  background-color: var(--color-secondary);
+  color: white !important;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card h3 {
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  color: var(--color-text-dark);
+  font-size: 14px;
 }

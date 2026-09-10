@@ -171,6 +171,13 @@ button {
   background-color: var(--button-primary-hover);
 }
 
+.button-secondary {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
 .button-accept {
   background-color: var(--color-success);
   color: var(--color-text);
@@ -213,5 +220,5 @@ button {
 }
 
 .empty-message {
-  margin-top: 20px;
+  margin-top: 40px;
 }
